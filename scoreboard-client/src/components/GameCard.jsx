@@ -18,60 +18,49 @@ function GameCard({ game }) {
 
     return (
         <div className="game-card">
-            <div className="game-status">
-                <span>{getStatusDisplay()}</span>
+            <div className="game-header">
+                <span className="game-status">{getStatusDisplay()}</span>
+                <span className="game-vs">VS</span>
             </div>
 
-            <div className="team-container">
+            <div className="teams-container">
                 <div className="team away">
+                    <div className="team-abbrev">{awayTeam.abbreviation}</div>
                     <div className="team-info">
-                        <div className={`team-logo ${awayTeam.abbreviation.toLowerCase()}`}>
-                            {awayTeam.abbreviation}
-                        </div>
-                        <div className="team-name">
-                            <span className="team-city">{awayTeam.city}</span>
-                            <span className="team-nickname">{awayTeam.name}</span>
-                        </div>
-                        <div className="team-record">
-                            ({awayTeam.wins}-{awayTeam.losses})
-                        </div>
+                        <div className="team-city">{awayTeam.city}</div>
+                        <div className="team-name">{awayTeam.name}</div>
+                        <div className="team-record">({awayTeam.wins}-{awayTeam.losses})</div>
                     </div>
                     <div className="team-score">{awayTeam.score}</div>
                 </div>
 
                 <div className="team home">
+                    <div className="team-abbrev">{homeTeam.abbreviation}</div>
                     <div className="team-info">
-                        <div className={`team-logo ${homeTeam.abbreviation.toLowerCase()}`}>
-                            {homeTeam.abbreviation}
-                        </div>
-                        <div className="team-name">
-                            <span className="team-city">{homeTeam.city}</span>
-                            <span className="team-nickname">{homeTeam.name}</span>
-                        </div>
-                        <div className="team-record">
-                            ({homeTeam.wins}-{homeTeam.losses})
-                        </div>
+                        <div className="team-city">{homeTeam.city}</div>
+                        <div className="team-name">{homeTeam.name}</div>
+                        <div className="team-record">({homeTeam.wins}-{homeTeam.losses})</div>
                     </div>
                     <div className="team-score">{homeTeam.score}</div>
                 </div>
             </div>
 
-            {game.gameStatus === 'live' && (
+            {gameStatus === 'live' && (
                 <div className="game-stats">
                     <div className="stat-row">
-                        <div className="stat-label">FG%</div>
-                        <div className="stat-value">{awayTeam.stats.fgPercentage}</div>
-                        <div className="stat-value">{homeTeam.stats.fgPercentage}</div>
+                        <span>FG%</span>
+                        <span>{awayTeam.stats.fgPercentage}</span>
+                        <span>{homeTeam.stats.fgPercentage}</span>
                     </div>
                     <div className="stat-row">
-                        <div className="stat-label">3PT</div>
-                        <div className="stat-value">{awayTeam.stats.threePointMade}-{awayTeam.stats.threePointAttempts}</div>
-                        <div className="stat-value">{homeTeam.stats.threePointMade}-{homeTeam.stats.threePointAttempts}</div>
+                        <span>3PT</span>
+                        <span>{awayTeam.stats.threePointMade}-{awayTeam.stats.threePointAttempts}</span>
+                        <span>{homeTeam.stats.threePointMade}-{homeTeam.stats.threePointAttempts}</span>
                     </div>
                     <div className="stat-row">
-                        <div className="stat-label">REB</div>
-                        <div className="stat-value">{awayTeam.stats.rebounds}</div>
-                        <div className="stat-value">{homeTeam.stats.rebounds}</div>
+                        <span>REB</span>
+                        <span>{awayTeam.stats.rebounds}</span>
+                        <span>{homeTeam.stats.rebounds}</span>
                     </div>
                 </div>
             )}

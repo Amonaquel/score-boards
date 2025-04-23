@@ -101,3 +101,43 @@
     width: 33%;
     text-align: right;
 }
+.scoreboards-container {
+    display: flex;
+    flex-wrap: nowrap; 
+    overflow-x: auto; 
+    gap: 20px; 
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .game-card {
+    flex: 0 0 auto; 
+    width: 350px; 
+    margin-right: 20px; 
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+  }
+  
+ 
+  .game-status {
+    background-color: #17408B;
+    color: white;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .team-container {
+    padding: 16px;
+  }
+  
+  .team {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+  }
